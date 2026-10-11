@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age & Height Calculator Pro</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,16 +28,12 @@
 <body class="bg-gradient-to-br from-indigo-50 via-slate-50 to-blue-100 min-h-screen text-slate-800 flex items-center justify-center p-4 sm:p-6">
 
     <div class="w-full max-w-2xl bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/50 p-6 sm:p-8 transition-all duration-300">
-        
-        <!-- Header -->
         <div class="text-center mb-8">
             <h1 class="text-2xl sm:text-3xl font-extrabold text-indigo-600 tracking-tight">Utility Calculators Pro</h1>
             <p class="text-sm text-slate-500 mt-1">Accurate age breakdowns and seamless height conversions</p>
         </div>
 
         <div class="space-y-8">
-            
-            <!-- Age Calculator Section -->
             <div class="bg-slate-50/80 rounded-xl p-5 sm:p-6 border border-slate-200/60 shadow-sm">
                 <div class="flex items-center space-x-2 mb-4">
                     <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,24 +45,21 @@
                 <div class="space-y-4">
                     <div>
                         <label for="dob" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Date of Birth</label>
-                        <input type="date" id="dob" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                        <input type="date" id="dob" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
-                    <button onclick="calculateAge()" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.99] cursor-pointer">
+                    <button onclick="calculateAge()" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
                         Calculate Age
                     </button>
 
-                    <div id="ageResult" class="hidden mt-4 p-4 bg-indigo-50/80 border border-indigo-100 rounded-xl text-indigo-900 text-sm space-y-2">
-                        <!-- Dynamic Age Results -->
-                    </div>
+                    <div id="ageResult" class="hidden mt-4 p-4 bg-indigo-50/80 border border-indigo-100 rounded-xl text-indigo-900 text-sm space-y-2"></div>
                 </div>
             </div>
 
-            <!-- Height Converter Section -->
             <div class="bg-slate-50/80 rounded-xl p-5 sm:p-6 border border-slate-200/60 shadow-sm">
                 <div class="flex items-center space-x-2 mb-4">
                     <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5m14 4v4"></path>
                     </svg>
                     <h2 class="text-lg font-semibold text-slate-800">Height Converter</h2>
                 </div>
@@ -76,11 +68,11 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label for="heightVal" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Value</label>
-                            <input type="number" id="heightVal" placeholder="Enter value" step="any" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                            <input type="number" id="heightVal" placeholder="Enter value" step="any" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                         </div>
                         <div>
                             <label for="unit" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">From Unit</label>
-                            <select id="unit" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                            <select id="unit" class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                                 <option value="cm">Centimeters (cm)</option>
                                 <option value="m">Meters (m)</option>
                                 <option value="inches">Inches (in)</option>
@@ -89,34 +81,30 @@
                         </div>
                     </div>
 
-                    <button onclick="convertHeight()" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.99] cursor-pointer">
+                    <button onclick="convertHeight()" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
                         Convert Height
                     </button>
 
-                    <div id="heightResult" class="hidden mt-4 p-4 bg-indigo-50/80 border border-indigo-100 rounded-xl text-indigo-900 text-sm space-y-1.5">
-                        <!-- Dynamic Height Results -->
-                    </div>
+                    <div id="heightResult" class="hidden mt-4 p-4 bg-indigo-50/80 border border-indigo-100 rounded-xl text-indigo-900 text-sm space-y-1.5"></div>
                 </div>
             </div>
-
         </div>
     </div>
 
     <script>
-        // Custom message box replacement for alert/confirm
         function showMessage(containerId, text, isError = false) {
             const resultDiv = document.getElementById(containerId);
+            if (!resultDiv) return;
+
             resultDiv.classList.remove('hidden');
             if (isError) {
                 resultDiv.className = "mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium";
-                resultDiv.innerHTML = text;
             } else {
                 resultDiv.className = "mt-4 p-4 bg-indigo-50/80 border border-indigo-100 rounded-xl text-indigo-900 text-sm space-y-2";
-                resultDiv.innerHTML = text;
             }
+            resultDiv.innerHTML = text;
         }
 
-        // Age Calculation Logic
         function calculateAge() {
             const dobInput = document.getElementById('dob').value;
             const resultId = 'ageResult';
@@ -126,8 +114,9 @@
                 return;
             }
 
-            const dob = new Date(dobInput);
+            const dob = new Date(dobInput + 'T00:00:00');
             const today = new Date();
+            today.setHours(0, 0, 0, 0);
 
             if (dob > today) {
                 showMessage(resultId, 'Date of birth cannot be in the future.', true);
@@ -139,19 +128,18 @@
             let days = today.getDate() - dob.getDate();
 
             if (days < 0) {
-                months--;
+                months -= 1;
                 const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
                 days += prevMonth.getDate();
             }
 
             if (months < 0) {
-                years--;
+                years -= 1;
                 months += 12;
             }
 
-            // Calculate extra stats
-            const diffTime = Math.abs(today - dob);
-            const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffTime = today.getTime() - dob.getTime();
+            const totalDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
             const totalWeeks = Math.floor(totalDays / 7);
             const totalMonths = years * 12 + months;
 
@@ -174,13 +162,12 @@
             showMessage(resultId, html, false);
         }
 
-        // Height Conversion Logic
         function convertHeight() {
-            const val = parseFloat(document.getElementById('heightVal').value);
+            const val = Number(document.getElementById('heightVal').value);
             const unit = document.getElementById('unit').value;
             const resultId = 'heightResult';
 
-            if (isNaN(val) || val <= 0) {
+            if (Number.isNaN(val) || val <= 0) {
                 showMessage(resultId, 'Please enter a valid positive number.', true);
                 return;
             }
@@ -211,19 +198,19 @@
 
             const html = `
                 <div class="grid grid-cols-2 gap-2 text-xs sm:text-sm font-medium">
-                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between">
+                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between gap-3">
                         <span class="text-slate-500">Centimeters:</span>
                         <span class="font-bold text-indigo-950">${cm.toFixed(2)} cm</span>
                     </div>
-                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between">
+                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between gap-3">
                         <span class="text-slate-500">Meters:</span>
                         <span class="font-bold text-indigo-950">${meters.toFixed(2)} m</span>
                     </div>
-                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between">
+                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between gap-3">
                         <span class="text-slate-500">Inches:</span>
                         <span class="font-bold text-indigo-950">${inches.toFixed(2)} in</span>
                     </div>
-                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between">
+                    <div class="bg-white/80 p-2.5 rounded-lg border border-indigo-100 flex justify-between gap-3">
                         <span class="text-slate-500">Feet:</span>
                         <span class="font-bold text-indigo-950">${feet.toFixed(2)} ft</span>
                     </div>
